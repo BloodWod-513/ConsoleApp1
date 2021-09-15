@@ -29,5 +29,30 @@ namespace ConsoleApp1
             Age = TMan.Age;
             Address = TMan.Address;
         }
+        public void SetData(string surname, string name, string patronymic)
+        {
+            Surname = surname;
+            Name = name;
+            Patronymic = patronymic;
+        }
+        public void SetData(string surname, string name, string patronymic, int age)
+        {
+            SetData(surname, name, patronymic);
+            Age = age;
+        }
+        public void SetData(string surname, string name, string patronymic, string address)
+        {
+            SetData(surname, name, patronymic);
+            Address = address;
+        }
+        public void SetData(string surname, string name, string patronymic, int age, string address)
+        {
+            SetData(surname, name, patronymic, age);
+            Address = address;
+        }
+        public TMan GetData()
+        {
+            return this;
+        }
     }
 }
