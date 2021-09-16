@@ -11,6 +11,16 @@ namespace ConsoleApp1
         public string Patronymic { get; set; }
         public int Age { get; set; }
         public string Address { get; set; }
+        public bool IsVoter 
+        {
+            get
+            {
+                if (Age >= 18)
+                    return true;
+                else
+                    return false;
+            }
+        }
 
         public TMan() { }
         public TMan(string surname, string name, string patronymic, int age, string address)
@@ -29,6 +39,7 @@ namespace ConsoleApp1
             Age = TMan.Age;
             Address = TMan.Address;
         }
+
         public void SetData(string surname, string name, string patronymic)
         {
             Surname = surname;
