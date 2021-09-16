@@ -65,5 +65,9 @@ namespace ConsoleApp1
         {
             return this;
         }
+        public bool CompareSurname(string surname)
+        {
+            return surname.Equals(Surname);
+        }
     }
 }
