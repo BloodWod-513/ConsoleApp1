@@ -61,9 +61,9 @@ namespace ConsoleApp1
             SetData(surname, name, patronymic, age);
             Address = address;
         }
-        public TMan GetData()
+        public string GetData()
         {
-            return this;
+            return $"{Surname} {Name} {Patronymic}, {Age}, {Address}";
         }
         public bool CompareSurname(string surname)
         {

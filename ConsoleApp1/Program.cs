@@ -8,6 +8,23 @@ namespace ConsoleApp1
         {
             Console.Write("Enter amount of persons: ");
             TMan[] persons = CreatePerson(int.Parse(Console.ReadLine()));
+
+            Console.WriteLine("Array: ");
+            foreach (var person in persons)
+                Console.WriteLine(person.GetData());
+
+            Console.WriteLine();
+
+            Console.Write("Enter surname: ");
+            string surname = Console.ReadLine();
+            Console.WriteLine("Array of voters with the specified surname: ");
+            foreach (var person in persons)
+            {
+                if (person.CompareSurname(surname) && person.IsVoter)
+                {
+                    Console.WriteLine(person.GetData());
+                }
+            }
             Console.ReadKey();
         }
         private static TMan[] CreatePerson(int size)
