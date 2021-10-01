@@ -30,12 +30,22 @@ namespace ConsoleApp1
         private static TMan[] CreatePerson(int size)
         {
             TMan[] persons = new TMan[size];
+            string[] aFio;
             for (int i = 0; i < persons.Length; i++)
             {
                 Console.Write($"Person {i + 1}\n");
-                Console.Write("Enter FIO: ");
-                string[]  aFio = Console.ReadLine().Split(' ');
+                while(true)
+                {
+                    Console.Write("Enter FIO: ");
+                    aFio = Console.ReadLine().Split(' ');
 
+                    if (aFio.Length < 3 || aFio.Length > 3)
+                    {
+                        Console.WriteLine("Введите ФИО из 3 значений.");
+                    }
+                    else
+                        break;
+                }
                 Console.Write("Enter age: ");
                 int age = int.Parse(Console.ReadLine());
 
